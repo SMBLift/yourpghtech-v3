@@ -320,7 +320,7 @@ body p,
 .side-content-subtitle,
 .subtitle {
   font-size: 18px !important;
-  line-height: 24px;
+  line-height: 1.1;
 }
 
 /* ── Process step headings: match theme h4 sizing (HTML uses h3 for valid heading hierarchy) ── */
