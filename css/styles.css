@@ -4,6 +4,11 @@
    js_composer, theme-overrides, revslider, vc-custom)
    ═══════════════════════════════════════════════════════ */
 
+/* ── Match live WordPress body font-size (Bootstrap sets 14px, WP overrides to 16px) ── */
+body {
+  font-size: 16px;
+}
+
 /* ── Honeypot (spam prevention — hidden from visual + screen readers) ── */
 .honeypot {
   position: absolute;
