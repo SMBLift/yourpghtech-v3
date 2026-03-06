@@ -309,6 +309,25 @@ body p,
   color: #fff !important;
 }
 
+/* ── Process step headings: match theme h4 sizing (HTML uses h3 for valid heading hierarchy) ── */
+.kd-process-steps .pss-text-area h3 {
+  font-size: 1em;
+  margin: 0;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.kd-process-steps.process-checkbox-template .pss-text-area h3 {
+  margin-bottom: 25px;
+}
+
+@media (max-width: 960px) {
+  .kd-process-steps.process-checkbox-template .pss-text-area h3 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
 /* ── Branded selection color ── */
 ::selection {
   background: rgba(76, 143, 204, 0.3);
