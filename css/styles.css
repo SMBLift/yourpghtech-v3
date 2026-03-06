@@ -260,6 +260,8 @@ body {
 }
 
 /* Fix gray body text contrast on white and light backgrounds */
+/* Original theme uses #828282 (3.95:1 — FAILS WCAG AA) */
+/* #696969 = 5.49:1 on white (PASSES, closest to original that's compliant) */
 body,
 .box,
 .cb-text-area p,
@@ -268,7 +270,7 @@ body p,
 .wpb_text_column,
 .side-content-subtitle,
 .subtitle {
-  color: #555 !important;
+  color: #696969 !important;
 }
 
 /* Keep hero slider text white (override the body p rule above) */
