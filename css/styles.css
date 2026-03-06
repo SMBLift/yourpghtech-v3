@@ -310,6 +310,7 @@ body p,
 }
 
 /* ── Process step headings: match theme h4 sizing (HTML uses h3 for valid heading hierarchy) ── */
+.kd-process-steps .pss-text-area h2,
 .kd-process-steps .pss-text-area h3 {
   font-size: 18px !important;
   line-height: 1.4;
@@ -318,11 +319,13 @@ body p,
   text-transform: none;
 }
 
+.kd-process-steps.process-checkbox-template .pss-text-area h2,
 .kd-process-steps.process-checkbox-template .pss-text-area h3 {
   margin-bottom: 25px;
 }
 
 @media (max-width: 960px) {
+  .kd-process-steps.process-checkbox-template .pss-text-area h2,
   .kd-process-steps.process-checkbox-template .pss-text-area h3 {
     margin-bottom: 20px;
     text-align: center;
