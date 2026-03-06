@@ -266,6 +266,13 @@ body p,
   color: #555 !important;
 }
 
+/* Keep hero slider text white (override the body p rule above) */
+#hero-slider .rev-slide-content p,
+#hero-slider .rev-slide-content h1,
+#hero-slider .rev-slide-content h2 {
+  color: #fff !important;
+}
+
 /* Fix specific inline #828282 text — override with accessible gray */
 [style*="color: #828282"],
 [style*="color:#828282"] {
