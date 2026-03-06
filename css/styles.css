@@ -311,7 +311,7 @@ body p,
 
 /* ── Process step headings: match theme h4 sizing (HTML uses h3 for valid heading hierarchy) ── */
 .kd-process-steps .pss-text-area h3 {
-  font-size: 1em;
+  font-size: 24px;
   margin: 0;
   margin-bottom: 10px;
   text-transform: none;
