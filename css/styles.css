@@ -280,8 +280,6 @@ body p,
 }
 
 /* Fix button/bg contrast: white text on brand blue needs darker blue */
-.tt_button,
-.tt_button.tt_secondary_button,
 .wpcf7 .wpcf7-submit,
 .kd-rev-button,
 .cb-container.cb_main_color:hover {
@@ -290,12 +288,24 @@ body p,
   color: #fff !important;
 }
 
-.tt_button:hover,
 .wpcf7 .wpcf7-submit:hover,
-.tt_button.tt_secondary_button:hover,
 .kd-rev-button:hover {
   background-color: #2A6399 !important;
   border-color: #2A6399 !important;
+  color: #fff !important;
+}
+
+/* Outline/ghost style for section CTA buttons (accessible: #3070A8 on white = 5.24:1) */
+.tt_button.tt_secondary_button {
+  background-color: transparent !important;
+  border-color: #3070A8 !important;
+  color: #3070A8 !important;
+}
+
+.tt_button.tt_secondary_button:hover,
+.tt_button.tt_secondary_button:focus-visible {
+  background-color: #3070A8 !important;
+  border-color: #3070A8 !important;
   color: #fff !important;
 }
 
