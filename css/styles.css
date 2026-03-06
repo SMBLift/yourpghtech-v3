@@ -316,6 +316,12 @@ body p,
   color: #fff !important;
 }
 
+/* ── Side-content subtitle: live site uses h6 (18px), v3 uses p (16px) ── */
+.side-content-subtitle {
+  font-size: 18px !important;
+  line-height: 24px;
+}
+
 /* ── Process step headings: match theme h4 sizing (HTML uses h3 for valid heading hierarchy) ── */
 .kd-process-steps .pss-text-area h2,
 .kd-process-steps .pss-text-area h3 {
