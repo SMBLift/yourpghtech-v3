@@ -478,6 +478,58 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
+/* ── Contact page: center icon box text on mobile ── */
+@media (max-width: 959px) {
+  .cb-container,
+  .cb-container .cb-text-area,
+  .cb-container .cb-text-area p {
+    text-align: center !important;
+  }
+}
+
+/* ── About page: split images around text on mobile ── */
+@media (max-width: 959px) {
+  /* Flatten column wrappers so we can reorder children */
+  .vc_custom_1513720913586 > .wpb_column,
+  .vc_custom_1513720913586 > .wpb_column > .vc_column-inner,
+  .vc_custom_1513720913586 > .wpb_column > .vc_column-inner > .wpb_wrapper {
+    display: contents !important;
+  }
+  .vc_custom_1513720913586 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  /* Right col image (citymain) → first */
+  .vc_custom_1519732632875 > .wpb_wrapper > .wpb_single_image { order: 1; }
+  /* Left col header (Who we are + paragraph) → second */
+  .vc_custom_1519732625990 > .wpb_wrapper > header.kd-section-title { order: 2; }
+  /* Left col image (cityclose) → third */
+  .vc_custom_1519732625990 > .wpb_wrapper > .wpb_single_image { order: 4; }
+  /* Right col founder paragraph → fourth */
+  .vc_custom_1519732632875 > .wpb_wrapper > .kd-section-title { order: 5; }
+  /* Hide empty spaces, not needed in mobile reflow */
+  .vc_custom_1519732625990 > .wpb_wrapper > .vc_empty_space,
+  .vc_custom_1519732632875 > .wpb_wrapper > .vc_empty_space { order: 10; height: 20px !important; }
+  /* Reset the large desktop padding on the inner row */
+  .vc_custom_1513720913586 {
+    padding: 40px 15px !important;
+  }
+  /* Center the text on mobile since it's full-width stacked */
+  .vc_custom_1513720913586 header.kd-section-title,
+  .vc_custom_1513720913586 .kd-section-title {
+    text-align: center !important;
+  }
+  /* Add spacing between reordered elements */
+  .vc_custom_1513720913586 > .wpb_column > .vc_column-inner > .wpb_wrapper > * {
+    margin-bottom: 20px;
+  }
+  /* Images should be full-width */
+  .vc_custom_1513720913586 .wpb_single_image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════
    WPBakery per-page custom CSS (from vc_shortcodes-custom-css)
    ═══════════════════════════════════════════════════════ */
