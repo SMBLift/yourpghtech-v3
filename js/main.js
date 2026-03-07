@@ -4,18 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // Replicates WPBakery's JS that stretches rows with data-vc-full-width="true"
   function vcStretchRows() {
     var rows = document.querySelectorAll('[data-vc-full-width="true"]');
+    var viewWidth = document.documentElement.clientWidth;
     rows.forEach(function(row) {
-      var container = row.closest('.container');
-      if (!container) return;
-
-      var containerRect = container.getBoundingClientRect();
-      var rowWidth = document.documentElement.clientWidth;
-      var offset = containerRect.left;
-
+      // Reset positioning first to measure natural position
+      row.style.left = '';
+      row.style.width = '';
+      row.style.paddingLeft = '';
+      row.style.paddingRight = '';
       row.style.position = 'relative';
-      row.style.left = -offset + 'px';
       row.style.boxSizing = 'border-box';
-      row.style.width = rowWidth + 'px';
+
+      var rowRect = row.getBoundingClientRect();
+      var offset = rowRect.left;
+
+      row.style.left = -offset + 'px';
+      row.style.width = viewWidth + 'px';
 
       // For rows that need content to stay within container width
       if (row.getAttribute('data-vc-full-width-init') === 'true') {
