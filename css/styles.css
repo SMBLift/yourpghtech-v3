@@ -280,6 +280,12 @@ body p,
   color: #fff !important;
 }
 
+/* Keep bottom contact section text white on dark background */
+.vc_custom_1616383194425 p,
+.vc_custom_1616383194425 .subtitle {
+  color: #fff !important;
+}
+
 /* Fix specific inline #828282 text — override with accessible gray */
 [style*="color: #828282"],
 [style*="color:#828282"] {
