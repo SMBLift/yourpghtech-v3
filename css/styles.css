@@ -91,6 +91,7 @@ body {
   .rev-slider-wrap {
     height: 400px !important;
   }
+  #hero-slider .rev-slide-content h1,
   #hero-slider .rev-slide-content h2 {
     font-size: 25px !important;
     line-height: 35px !important;
@@ -100,6 +101,23 @@ body {
   }
   #hero-slider .slider-arrow {
     display: none !important;
+  }
+}
+
+/* ── Inline "Get In Touch" form — match live site mobile layout ── */
+@media (max-width: 959px) {
+  .inline-cf .wpcf7-form p {
+    display: block !important;
+  }
+  .inline-cf .wpcf7-form-control-wrap {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .inline-cf .wpcf7 .wpcf7-submit {
+    width: 100% !important;
+    margin-left: 0 !important;
   }
 }
 
