@@ -119,43 +119,50 @@ body {
     width: 100% !important;
     margin-left: 0 !important;
   }
+  /* Add breathing room — live site has ~15px more padding per side */
+  .vc_custom_1518602127931 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
 }
 
-/* ── Transparent nav on homepage ── */
-.transparent-navigation .navbar.navbar-fixed-top {
-  background-color: transparent;
-}
+/* ── Transparent nav on homepage (desktop only — mobile uses solid white nav) ── */
+@media (min-width: 960px) {
+  .transparent-navigation .navbar.navbar-fixed-top {
+    background-color: transparent;
+  }
 
-.transparent-navigation .navbar.navbar-fixed-top.navbar-shrink {
-  background-color: #fff;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-}
+  .transparent-navigation .navbar.navbar-fixed-top.navbar-shrink {
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  }
 
-/* Nav transparent state: show white logo, hide black logo */
-.transparent-navigation .navbar:not(.navbar-shrink) .fixed-logo {
-  display: none;
-}
+  /* Nav transparent state: show white logo, hide black logo */
+  .transparent-navigation .navbar:not(.navbar-shrink) .fixed-logo {
+    display: none;
+  }
 
-.transparent-navigation .navbar:not(.navbar-shrink) .nav-logo {
-  display: block;
-}
+  .transparent-navigation .navbar:not(.navbar-shrink) .nav-logo {
+    display: block;
+  }
 
-/* Nav solid state: show black logo, hide white logo */
-.transparent-navigation .navbar.navbar-shrink .fixed-logo {
-  display: block;
-}
+  /* Nav solid state: show black logo, hide white logo */
+  .transparent-navigation .navbar.navbar-shrink .fixed-logo {
+    display: block;
+  }
 
-.transparent-navigation .navbar.navbar-shrink .nav-logo {
-  display: none;
-}
+  .transparent-navigation .navbar.navbar-shrink .nav-logo {
+    display: none;
+  }
 
-/* Nav text color when transparent */
-.transparent-navigation .navbar:not(.navbar-shrink) .navbar-nav > li > a {
-  color: #fff;
-}
+  /* Nav text color when transparent */
+  .transparent-navigation .navbar:not(.navbar-shrink) .navbar-nav > li > a {
+    color: #fff;
+  }
 
-.transparent-navigation .navbar.navbar-shrink .navbar-nav > li > a {
-  color: #333;
+  .transparent-navigation .navbar.navbar-shrink .navbar-nav > li > a {
+    color: #333;
+  }
 }
 
 /* ── Active nav link highlight ── */
