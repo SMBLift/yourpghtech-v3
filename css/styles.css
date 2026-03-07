@@ -437,12 +437,13 @@ body {
   .lower-footer span {
     font-size: 14px;
   }
-  /* Feature tabs: minimum 14px on mobile */
+  /* Feature tabs: minimum 14px on mobile, centered like live site */
   .sticky-tabs .nav-label a {
     font-size: 14px !important;
     min-height: 44px;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   /* CTA buttons: minimum 14px on mobile */
   .tt_button {
