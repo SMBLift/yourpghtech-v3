@@ -377,13 +377,21 @@ body p,
 
 /* But form inputs inside the dark section should keep their default text color */
 .vc_custom_1616383194425 .wpcf7-form-control {
-  color: #757575 !important;
+  color: #555 !important;
 }
 
 /* Placeholder contrast fix — 4.5:1 minimum on white background */
 .wpcf7-form-control::placeholder {
-  color: #757575 !important;
-  opacity: 1;
+  color: #555 !important;
+  opacity: 1 !important;
+}
+.wpcf7-form-control::-webkit-input-placeholder {
+  color: #555 !important;
+  opacity: 1 !important;
+}
+.wpcf7-form-control::-moz-placeholder {
+  color: #555 !important;
+  opacity: 1 !important;
 }
 
 /* Fix specific inline #828282 text — override with accessible gray */
