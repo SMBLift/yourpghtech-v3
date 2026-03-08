@@ -69,6 +69,14 @@ body {
   background: rgba(255,255,255,0.6) !important;
 }
 
+/* ── Hero slider headings: match live RevSlider rendering ── */
+#hero-slider .rev-slide-content h1,
+#hero-slider .rev-slide-content h2 {
+  font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
 /* ── Responsive slider ── */
 @media (max-width: 778px) {
   #hero-slider,
@@ -78,6 +86,7 @@ body {
   #hero-slider .rev-slide-content h1,
   #hero-slider .rev-slide-content h2 {
     font-size: 36px !important;
+    font-weight: 400 !important;
     line-height: 1.3 !important;
     white-space: normal !important;
   }
@@ -106,9 +115,10 @@ body {
   }
   #hero-slider .rev-slide-content h1,
   #hero-slider .rev-slide-content h2 {
-    font-size: 28px !important;
-    line-height: 35px !important;
-    letter-spacing: -0.84px !important;
+    font-size: 25px !important;
+    font-weight: 400 !important;
+    line-height: 32px !important;
+    letter-spacing: -0.75px !important;
   }
   #hero-slider .rev-slide-content p {
     display: none;

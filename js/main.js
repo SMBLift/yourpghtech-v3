@@ -213,14 +213,31 @@ document.addEventListener('DOMContentLoaded', function() {
   var sliderEl = document.getElementById('hero-slider');
   if (sliderEl) {
     var touchStartX = 0;
-    var touchEndX = 0;
+    var touchStartY = 0;
+    var swiping = false;
+
     sliderEl.addEventListener('touchstart', function(e) {
-      touchStartX = e.changedTouches[0].screenX;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      swiping = true;
     }, { passive: true });
+
+    sliderEl.addEventListener('touchmove', function(e) {
+      if (!swiping) return;
+      // If vertical scroll is greater than horizontal, let it scroll normally
+      var dx = Math.abs(e.touches[0].clientX - touchStartX);
+      var dy = Math.abs(e.touches[0].clientY - touchStartY);
+      if (dy > dx) {
+        swiping = false;
+      }
+    }, { passive: true });
+
     sliderEl.addEventListener('touchend', function(e) {
-      touchEndX = e.changedTouches[0].screenX;
+      if (!swiping) return;
+      swiping = false;
+      var touchEndX = e.changedTouches[0].clientX;
       var diff = touchStartX - touchEndX;
-      if (Math.abs(diff) > 50) {
+      if (Math.abs(diff) > 40) {
         if (diff > 0) { nextSlide(); } else { prevSlide(); }
         resetAutoplay();
       }
