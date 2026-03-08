@@ -601,10 +601,14 @@ button:focus-visible,
   .vc_custom_1513720913586 {
     padding: 40px 15px !important;
   }
-  /* Center the text on mobile since it's full-width stacked */
+  /* Left-align text on mobile */
   .vc_custom_1513720913586 header.kd-section-title,
   .vc_custom_1513720913586 .kd-section-title {
-    text-align: center !important;
+    text-align: left !important;
+  }
+  /* More space between first paragraph and second image */
+  .vc_custom_1519732625990 > .wpb_wrapper > header.kd-section-title {
+    margin-bottom: 40px !important;
   }
   /* Add spacing between reordered elements */
   .vc_custom_1513720913586 > .wpb_column > .vc_column-inner > .wpb_wrapper > * {
