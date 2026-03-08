@@ -21,31 +21,32 @@
   <!-- Favicon -->
   <link rel="icon" href="images/cropped-yptfav-32x32.jpg" sizes="32x32">
 
-  <!-- Google Fonts (exact match from live site) -->
+  <!-- Preconnect to external origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800|Roboto:400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-  <!-- Font Awesome 5 CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-  <!-- CSS in correct cascade order (matching WordPress load order) -->
+  <!-- Critical CSS (render-blocking — needed for above-fold layout) -->
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/vendor/theme.css">
-  <link rel="stylesheet" href="css/vendor/kd_vc_front.css">
-  <link rel="stylesheet" href="css/vendor/js_composer.min.css">
-
-  <!-- Dynamic theme overrides (was inline on WP site) -->
   <link rel="stylesheet" href="css/vendor/theme-overrides.css">
-
-  <!-- RevSlider nav styles -->
-  <link rel="stylesheet" href="css/vendor/revslider.css">
-
-  <!-- VC Custom Classes (per-element overrides) -->
   <link rel="stylesheet" href="css/vendor/vc-custom.css">
-
-  <!-- Site-specific overrides -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Deferred CSS (non-critical — loaded async, applied on load) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800|Roboto:400&display=swap" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/vendor/kd_vc_front.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/vendor/js_composer.min.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/vendor/revslider.css" media="print" onload="this.media='all'">
+  <!-- Fallback for no-JS -->
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800|Roboto:400&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/vendor/kd_vc_front.css">
+    <link rel="stylesheet" href="css/vendor/js_composer.min.css">
+    <link rel="stylesheet" href="css/vendor/revslider.css">
+  </noscript>
 </head>
 <body class="wp-singular page-template-default page page-id-3677 wp-theme-leadengine wpb-js-composer js-comp-ver-6.4.1 vc_responsive">
 
@@ -58,8 +59,8 @@
     <div class="container">
       <div id="logo">
         <a class="logo" href="index.html">
-          <img class="fixed-logo" src="images/logo-black.png" width="280" alt="Your Pgh Tech">
-          <img class="nav-logo" src="images/logo-white.png" width="280" alt="Your Pgh Tech">
+          <img class="fixed-logo" src="images/logo-black.png" width="280" height="78" alt="Your Pgh Tech">
+          <img class="nav-logo" src="images/logo-white.png" width="280" height="78" alt="Your Pgh Tech">
         </a>
       </div>
       <div class="navbar-header page-scroll">
