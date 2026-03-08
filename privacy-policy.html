@@ -29,8 +29,8 @@
   <!-- Critical CSS (render-blocking — needed for above-fold layout) -->
   <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="css/vendor/theme.css">
-  <link rel="stylesheet" href="css/vendor/theme-overrides.css">
-  <link rel="stylesheet" href="css/vendor/vc-custom.css">
+  <link rel="stylesheet" href="css/vendor/theme-overrides.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/vendor/vc-custom.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Deferred CSS (non-critical — loaded async, applied on load) -->
@@ -59,8 +59,8 @@
     <div class="container">
       <div id="logo">
         <a class="logo" href="index.html">
-          <img class="fixed-logo" src="images/logo-black.png" width="280" height="78" alt="Your Pgh Tech">
-          <img class="nav-logo" src="images/logo-white.png" width="280" height="78" alt="Your Pgh Tech">
+          <img class="fixed-logo" src="images/logo-black.webp" width="280" height="78" alt="Your Pgh Tech">
+          <img class="nav-logo" src="images/logo-white.webp" width="280" height="78" alt="Your Pgh Tech">
         </a>
       </div>
       <div class="navbar-header page-scroll">

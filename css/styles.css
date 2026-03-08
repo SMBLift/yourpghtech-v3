@@ -39,7 +39,7 @@ body {
 
 /* ── Fix image paths in VC custom backgrounds ── */
 .vc_custom_1616383194425 {
-  background-image: url('../images/homepagebottom.jpg') !important;
+  background-image: url('../images/homepagebottom.webp') !important;
   background-size: cover !important;
   background-position: center center !important;
 }
