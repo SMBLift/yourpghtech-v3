@@ -419,7 +419,7 @@ body p,
 /* Outline/ghost style for section CTA buttons */
 .tt_button.tt_secondary_button {
   background-color: transparent !important;
-  border-color: #3070A8 !important;
+  border: 2px solid #3070A8 !important;
   color: #3070A8 !important;
   font-size: 13px !important;
 }
