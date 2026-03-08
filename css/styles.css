@@ -635,10 +635,12 @@ button:focus-visible,
   .vc_custom_1519732632875 {
     padding-left: 0 !important;
   }
-  /* Left-align text on mobile */
+  /* Left-align text on mobile and match padding on both paragraphs */
   .vc_custom_1513720913586 header.kd-section-title,
   .vc_custom_1513720913586 .kd-section-title {
     text-align: left !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   /* More space between first paragraph and second image */
   .vc_custom_1519732625990 > .wpb_wrapper > header.kd-section-title {
