@@ -674,6 +674,10 @@ button:focus-visible,
 .vc_custom_1513720913586{padding-top: 100px !important;padding-right: 100px !important;padding-bottom: 80px !important;padding-left: 100px !important;}
 .vc_custom_1519732625990{padding-right: 40px !important;}
 .vc_custom_1519732632875{padding-left: 40px !important;}
+@media (max-width: 959px) {
+  .vc_custom_1519732625990{padding-right: 0 !important;}
+  .vc_custom_1519732632875{padding-left: 0 !important;}
+}
 
 /* -- Contact page -- */
 .vc_custom_1516641975949{margin-bottom: -40px !important;}
