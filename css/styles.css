@@ -4,6 +4,19 @@
    js_composer, theme-overrides, revslider, vc-custom)
    ═══════════════════════════════════════════════════════ */
 
+/* ── Screen reader only (visually hidden, accessible to AT) ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ── Match live WordPress body font-size ── */
 /* Desktop: 16px (WP customizer). Mobile: 14px (Bootstrap default, WP doesn't override at mobile) */
 body {
