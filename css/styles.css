@@ -628,6 +628,13 @@ button:focus-visible,
   .vc_custom_1513720913586 {
     padding: 40px 15px !important;
   }
+  /* Reset column padding so both paragraphs share the same left edge */
+  .vc_custom_1519732625990 {
+    padding-right: 0 !important;
+  }
+  .vc_custom_1519732632875 {
+    padding-left: 0 !important;
+  }
   /* Left-align text on mobile */
   .vc_custom_1513720913586 header.kd-section-title,
   .vc_custom_1513720913586 .kd-section-title {
