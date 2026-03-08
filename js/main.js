@@ -209,6 +209,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Touch/swipe support for mobile
+  var sliderEl = document.getElementById('hero-slider');
+  if (sliderEl) {
+    var touchStartX = 0;
+    var touchEndX = 0;
+    sliderEl.addEventListener('touchstart', function(e) {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    sliderEl.addEventListener('touchend', function(e) {
+      touchEndX = e.changedTouches[0].screenX;
+      var diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) { nextSlide(); } else { prevSlide(); }
+        resetAutoplay();
+      }
+    }, { passive: true });
+  }
+
   if (slideCount > 1) {
     startAutoplay();
   }

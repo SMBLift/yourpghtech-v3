@@ -4,9 +4,15 @@
    js_composer, theme-overrides, revslider, vc-custom)
    ═══════════════════════════════════════════════════════ */
 
-/* ── Match live WordPress body font-size (Bootstrap sets 14px, WP overrides to 16px) ── */
+/* ── Match live WordPress body font-size ── */
+/* Desktop: 16px (WP customizer). Mobile: 14px (Bootstrap default, WP doesn't override at mobile) */
 body {
   font-size: 16px;
+}
+@media (max-width: 960px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 /* ── Honeypot (spam prevention — hidden from visual + screen readers) ── */
@@ -64,7 +70,7 @@ body {
 }
 
 /* ── Responsive slider ── */
-@media (max-width: 991px) {
+@media (max-width: 778px) {
   #hero-slider,
   .rev-slider-wrap {
     height: 500px !important;
@@ -86,6 +92,13 @@ body {
   }
 }
 
+/* Hide slider arrows below 1024px (matches live RevSlider config: hide_under:1024) */
+@media (max-width: 1024px) {
+  #hero-slider .slider-arrow {
+    display: none !important;
+  }
+}
+
 @media (max-width: 480px) {
   #hero-slider,
   .rev-slider-wrap {
@@ -93,14 +106,12 @@ body {
   }
   #hero-slider .rev-slide-content h1,
   #hero-slider .rev-slide-content h2 {
-    font-size: 25px !important;
+    font-size: 28px !important;
     line-height: 35px !important;
+    letter-spacing: -0.84px !important;
   }
   #hero-slider .rev-slide-content p {
     display: none;
-  }
-  #hero-slider .slider-arrow {
-    display: none !important;
   }
 }
 
@@ -165,23 +176,35 @@ body {
   }
 }
 
-/* ── Active nav link highlight ── */
-.navbar.navbar-default .menubar .navbar-nav > li.active > a,
-.navbar.navbar-default .menubar .navbar-nav > li.active > a:hover,
-.navbar.navbar-default .menubar .navbar-nav > li.active > a:focus {
-  color: #4C8FCC !important;
+/* ── Active nav link highlight (desktop only — mobile is all black) ── */
+@media (min-width: 961px) {
+  .navbar.navbar-default .menubar .navbar-nav > li.active > a,
+  .navbar.navbar-default .menubar .navbar-nav > li.active > a:hover,
+  .navbar.navbar-default .menubar .navbar-nav > li.active > a:focus {
+    color: #3070A8 !important;
+  }
+}
+
+/* ── Nav links: black on mobile (match live site structure) ── */
+@media (max-width: 960px) {
+  .navbar-nav > li > a,
+  .navbar-nav > li.active > a {
+    color: #000 !important;
+  }
 }
 
 /* ── Map container fix ── */
 .contact-map-container {
   overflow: hidden;
   border-radius: 0;
+  min-height: 300px;
 }
 
 .contact-map-container iframe {
   display: block;
   width: 100%;
   height: 100%;
+  min-height: 300px;
 }
 
 /* ── Form success message ── */
@@ -203,6 +226,18 @@ body {
   position: relative;
   z-index: 2;
   background: #fff;
+}
+
+/* On mobile, footer should be relative (not fixed behind content) */
+@media (max-width: 959px) {
+  #footer.fixed,
+  #footer {
+    position: relative !important;
+    z-index: 0;
+  }
+  #wrapper {
+    margin-bottom: 0 !important;
+  }
 }
 
 /* ── Respect reduced motion preference (accessibility / WCAG 2.1 AA) ── */
@@ -270,11 +305,13 @@ body {
 /* Original #4C8FCC on white = 3.43:1 (FAILS). #3070A8 on white = 5.24:1 (PASSES) */
 /* Original #828282 on white = 3.95:1 (FAILS). #696969 on white = 5.49:1 (PASSES) */
 
-/* Fix active nav link contrast */
-.navbar.navbar-default .menubar .navbar-nav > li.active > a,
-.navbar.navbar-default .menubar .navbar-nav > li.active > a:hover,
-.navbar.navbar-default .menubar .navbar-nav > li.active > a:focus {
-  color: #3070A8 !important;
+/* Fix active nav link contrast (desktop only — mobile nav is all black) */
+@media (min-width: 961px) {
+  .navbar.navbar-default .menubar .navbar-nav > li.active > a,
+  .navbar.navbar-default .menubar .navbar-nav > li.active > a:hover,
+  .navbar.navbar-default .menubar .navbar-nav > li.active > a:focus {
+    color: #3070A8 !important;
+  }
 }
 
 /* Fix feature tabs active link contrast */
@@ -291,8 +328,6 @@ body {
 }
 
 /* Fix gray body text contrast on white and light backgrounds */
-/* Original theme uses #828282 (3.95:1 — FAILS WCAG AA) */
-/* #696969 = 5.49:1 on white (PASSES, closest to original that's compliant) */
 body,
 .box,
 .cb-text-area p,
@@ -317,6 +352,11 @@ body p,
   color: #fff !important;
 }
 
+/* But form inputs inside the dark section should keep their default text color */
+.vc_custom_1616383194425 .wpcf7-form-control {
+  color: #828282 !important;
+}
+
 /* Fix specific inline #828282 text — override with accessible gray */
 [style*="color: #828282"],
 [style*="color:#828282"] {
@@ -339,11 +379,12 @@ body p,
   color: #fff !important;
 }
 
-/* Outline/ghost style for section CTA buttons (accessible: #3070A8 on white = 5.24:1) */
+/* Outline/ghost style for section CTA buttons */
 .tt_button.tt_secondary_button {
   background-color: transparent !important;
   border-color: #3070A8 !important;
   color: #3070A8 !important;
+  font-size: 13px !important;
 }
 
 .tt_button.tt_secondary_button:hover,
@@ -353,17 +394,55 @@ body p,
   color: #fff !important;
 }
 
-/* ── Subtitles: live site uses h6 (18px), v3 uses p (16px) ── */
+/* ── Process steps separator: match live site spacing and visibility ── */
+.vc_custom_1616450153619 {
+  margin-top: 25px;
+}
+.vc_custom_1616450153619 .kd-separator-line {
+  border-top: 3px solid #4C8FCC !important;
+}
+
+/* ── Match live site heading sizes (live uses h3, v3 uses h2) ── */
+/* Desktop: 28px (h3 equivalent). Mobile: 22px (verified via computed styles) */
+.side-content-title {
+  font-size: 28px !important;
+}
+@media (max-width: 960px) {
+  .side-content-title {
+    font-size: 22px !important;
+    text-align: left !important;
+  }
+}
+
+/* "Get In Touch" heading: desktop 28px, mobile 25px (verified via computed styles) */
+.vc_custom_1616359955699 {
+  font-size: 28px !important;
+  line-height: 40px !important;
+}
+@media (max-width: 960px) {
+  .vc_custom_1616359955699 {
+    font-size: 25px !important;
+    line-height: 32px !important;
+  }
+}
+
+/* ── Subtitles: desktop 18px (h6 equivalent), mobile 16px (verified via computed styles) ── */
 .side-content-subtitle,
 .subtitle {
   font-size: 18px !important;
+}
+@media (max-width: 960px) {
+  .side-content-subtitle,
+  .subtitle {
+    font-size: 16px !important;
+  }
 }
 
 /* ── Process step headings: match theme h4 sizing (HTML uses h3 for valid heading hierarchy) ── */
 .kd-process-steps .pss-text-area h2,
 .kd-process-steps .pss-text-area h3 {
   font-size: 24px !important;
-  line-height: 1.4;
+  line-height: 1.3;
   margin: 0;
   margin-bottom: 10px;
   text-transform: none;
@@ -410,8 +489,8 @@ body {
   margin-right: 0;
 }
 
-/* ── Mobile hamburger menu ── */
-@media (max-width: 768px) {
+/* ── Mobile hamburger menu (960px matches live site breakpoint) ── */
+@media (max-width: 960px) {
   .navbar-collapse {
     background: #fff;
     max-height: 80vh;
@@ -427,27 +506,25 @@ body {
   .navbar-toggle {
     border: none;
   }
-  .transparent-navigation .navbar:not(.navbar-shrink) .navbar-toggle .icon-bar {
-    background-color: #fff;
-  }
-  .transparent-navigation .navbar.navbar-shrink .navbar-toggle .icon-bar {
-    background-color: #333;
+  /* Live site uses black icon bars always (even on transparent nav) */
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #000 !important;
   }
   /* Footer copyright: minimum 14px on mobile */
   .lower-footer span {
     font-size: 14px;
   }
-  /* Feature tabs: minimum 14px on mobile, centered like live site */
+  /* Feature tabs: 13px on mobile (verified via computed styles on live site) */
   .sticky-tabs .nav-label a {
-    font-size: 14px !important;
+    font-size: 13px !important;
     min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  /* CTA buttons: minimum 14px on mobile */
+  /* CTA buttons: 13px on mobile (match live site) */
   .tt_button {
-    font-size: 14px !important;
+    font-size: 13px !important;
   }
 }
 
@@ -461,7 +538,7 @@ body {
 }
 
 .sticky-tabs .nav-label.active a {
-  color: #4C8FCC !important;
+  color: #3070A8 !important;
 }
 
 /* ── Ensure focus rings on form elements ── */
