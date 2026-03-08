@@ -355,23 +355,35 @@ document.addEventListener('DOMContentLoaded', function() {
       if (btn.tagName === 'INPUT') btn.value = 'Sending...';
       else btn.textContent = 'Sending...';
 
-      // For now, show success (Worker URL to be configured)
-      setTimeout(function() {
-        form.reset();
-        var msg = document.getElementById('form-success');
-        if (msg) {
-          msg.classList.remove('hidden');
-          msg.style.display = 'block';
-          msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(res) {
+        if (res.ok) {
+          form.reset();
+          var msg = document.getElementById('form-success');
+          if (msg) {
+            msg.classList.remove('hidden');
+            msg.style.display = 'block';
+            msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState({}, '', window.location.pathname);
+          }
+        } else {
+          alert('Something went wrong. Please call us directly.');
         }
+      })
+      .catch(function() {
+        alert('Something went wrong. Please call us directly.');
+      })
+      .finally(function() {
         btn.disabled = false;
         if (btn.tagName === 'INPUT') btn.value = originalText;
         else btn.textContent = originalText;
-        // Clean URL params
-        if (window.history && window.history.replaceState) {
-          window.history.replaceState({}, '', window.location.pathname);
-        }
-      }, 1000);
+      });
     });
   }
 
@@ -387,12 +399,26 @@ document.addEventListener('DOMContentLoaded', function() {
       btn.disabled = true;
       btn.value = 'Sending...';
 
-      setTimeout(function() {
-        form.reset();
+      fetch('/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function(res) {
+        if (res.ok) {
+          form.reset();
+          alert('Thank you! We will be in touch shortly.');
+        } else {
+          alert('Something went wrong. Please call us directly.');
+        }
+      })
+      .catch(function() {
+        alert('Something went wrong. Please call us directly.');
+      })
+      .finally(function() {
         btn.disabled = false;
         btn.value = originalText;
-        alert('Thank you! We will be in touch shortly.');
-      }, 1000);
+      });
     });
   }
 
