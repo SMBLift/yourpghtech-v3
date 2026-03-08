@@ -447,7 +447,7 @@ body p,
 @media (max-width: 960px) {
   .side-content-title {
     font-size: 22px !important;
-    text-align: left !important;
+    text-align: center !important;
   }
 }
 
