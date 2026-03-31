@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
   <!-- Critical CSS (single combined file) -->
-  <link rel="stylesheet" href="css/critical.css?v=20260330">
+  <link rel="stylesheet" href="css/critical.css?v=20260331">
 
   <!-- Deferred CSS (non-critical — loaded async, applied on load) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Roboto:400&display=swap" media="print" onload="this.media='all'">
@@ -220,11 +220,11 @@
                                     <label for="hp-field" class="honeypot">Leave blank</label>
                                     <input type="text" name="_honeypot" id="hp-field" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                                     <p>
-                                      <span class="wpcf7-form-control-wrap"><input type="text" name="your-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Name"></span><br>
-                                      <span class="wpcf7-form-control-wrap"><input type="text" name="company-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Company Name"></span><br>
-                                      <span class="wpcf7-form-control-wrap"><input type="email" name="your-email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" placeholder="Email"></span><br>
-                                      <span class="wpcf7-form-control-wrap"><input type="tel" name="your-phone" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" pattern="[0-9()\-\s+]{7,15}" placeholder="Phone"></span><br>
-                                      <span class="wpcf7-form-control-wrap"><textarea name="message-text" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message"></textarea></span><br>
+                                      <span class="wpcf7-form-control-wrap"><label for="ct-name" class="form-label-visible">Name <span aria-hidden="true">*</span><span class="sr-only">required</span></label><input type="text" id="ct-name" name="your-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Name" autocomplete="name"></span><br>
+                                      <span class="wpcf7-form-control-wrap"><label for="ct-company" class="form-label-visible">Company Name <span aria-hidden="true">*</span><span class="sr-only">required</span></label><input type="text" id="ct-company" name="company-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Company Name" autocomplete="organization"></span><br>
+                                      <span class="wpcf7-form-control-wrap"><label for="ct-email" class="form-label-visible">Email <span aria-hidden="true">*</span><span class="sr-only">required</span></label><input type="email" id="ct-email" name="your-email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" placeholder="Email" autocomplete="email"></span><br>
+                                      <span class="wpcf7-form-control-wrap"><label for="ct-phone" class="form-label-visible">Phone</label><input type="tel" id="ct-phone" name="your-phone" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" pattern="[0-9()\-\s+]{7,15}" placeholder="Phone" autocomplete="tel"></span><br>
+                                      <span class="wpcf7-form-control-wrap"><label for="ct-message" class="form-label-visible">Message</label><textarea id="ct-message" name="message-text" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message"></textarea></span><br>
                                       <input type="submit" value="Send message" class="wpcf7-form-control wpcf7-submit">
                                     </p>
                                     <div id="form-success" class="wpcf7-response-output hidden" role="status" aria-live="polite">

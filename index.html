@@ -39,7 +39,7 @@
   <link rel="preload" as="image" href="images/mainslider1.webp" type="image/webp" fetchpriority="high">
 
   <!-- Critical CSS (single combined file) -->
-  <link rel="stylesheet" href="css/critical.css?v=20260330">
+  <link rel="stylesheet" href="css/critical.css?v=20260331">
 
   <!-- Deferred CSS (non-critical — loaded async, applied on load) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Roboto:400&display=swap" media="print" onload="this.media='all'">
@@ -177,9 +177,9 @@
                               <div class="wpcf7">
                                 <form id="inline-contact-form" class="wpcf7-form" novalidate>
                                   <p>
-                                    <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Name"></span>
-                                    <span class="wpcf7-form-control-wrap your-phone"><input type="tel" name="your-phone" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" placeholder="Phone" pattern="[0-9()\-\s+]{7,15}"></span>
-                                    <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" placeholder="Email"></span>
+                                    <span class="wpcf7-form-control-wrap your-name"><label for="inline-name" class="form-label-visible">Name</label><input type="text" id="inline-name" name="your-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Name" autocomplete="name"></span>
+                                    <span class="wpcf7-form-control-wrap your-phone"><label for="inline-phone" class="form-label-visible">Phone</label><input type="tel" id="inline-phone" name="your-phone" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel" aria-required="true" placeholder="Phone" pattern="[0-9()\-\s+]{7,15}" autocomplete="tel"></span>
+                                    <span class="wpcf7-form-control-wrap your-email"><label for="inline-email" class="form-label-visible">Email</label><input type="email" id="inline-email" name="your-email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" placeholder="Email" autocomplete="email"></span>
                                     <input type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit">
                                   </p>
                                 </form>
@@ -381,19 +381,24 @@
                                 <input type="text" name="_honeypot" id="hp-field" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                                 <p>
                                   <span class="wpcf7-form-control-wrap your-name">
-                                    <input type="text" name="your-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Name">
+                                    <label for="idx-name" class="form-label-visible light">Name <span aria-hidden="true">*</span><span class="sr-only">required</span></label>
+                                    <input type="text" id="idx-name" name="your-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Name" autocomplete="name">
                                   </span><br>
                                   <span class="wpcf7-form-control-wrap company-name">
-                                    <input type="text" name="company-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Company Name">
+                                    <label for="idx-company" class="form-label-visible light">Company Name <span aria-hidden="true">*</span><span class="sr-only">required</span></label>
+                                    <input type="text" id="idx-company" name="company-name" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" placeholder="Company Name" autocomplete="organization">
                                   </span><br>
                                   <span class="wpcf7-form-control-wrap your-email">
-                                    <input type="email" name="your-email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" placeholder="Email">
+                                    <label for="idx-email" class="form-label-visible light">Email <span aria-hidden="true">*</span><span class="sr-only">required</span></label>
+                                    <input type="email" id="idx-email" name="your-email" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" placeholder="Email" autocomplete="email">
                                   </span><br>
                                   <span class="wpcf7-form-control-wrap your-phone">
-                                    <input type="tel" name="your-phone" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" placeholder="Phone" pattern="[0-9()\-\s+]{7,15}">
+                                    <label for="idx-phone" class="form-label-visible light">Phone</label>
+                                    <input type="tel" id="idx-phone" name="your-phone" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" placeholder="Phone" pattern="[0-9()\-\s+]{7,15}" autocomplete="tel">
                                   </span><br>
                                   <span class="wpcf7-form-control-wrap message-text">
-                                    <textarea name="message-text" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message" style="min-height:120px;"></textarea>
+                                    <label for="idx-message" class="form-label-visible light">Message</label>
+                                    <textarea id="idx-message" name="message-text" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message" style="min-height:120px;"></textarea>
                                   </span><br>
                                   <input type="submit" value="Send message" class="wpcf7-form-control wpcf7-submit">
                                 </p>
