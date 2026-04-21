@@ -24,6 +24,19 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta name="theme-color" content="#4C8FCC">
 
+  <!-- Google Consent Mode v2 (default: denied until user consents) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+
   <!-- Preconnect to external origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -287,16 +300,16 @@
 }
 </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PP61NP5NN7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PP61NP5NN7');
-</script>
-
 <!-- JavaScript -->
 <script src="js/main.js"></script>
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent" role="dialog" aria-label="Cookie consent" aria-describedby="consent-message">
+  <p id="consent-message">We use cookies to analyze site traffic. You can choose to accept or decline. <a href="privacy-policy.html">Privacy Policy</a></p>
+  <div class="consent-buttons">
+    <button id="consent-reject" class="consent-btn consent-btn-reject" type="button">Decline</button>
+    <button id="consent-accept" class="consent-btn consent-btn-accept" type="button">Accept</button>
+  </div>
+</div>
+<script src="js/consent.js"></script>
 </body>
 </html>
