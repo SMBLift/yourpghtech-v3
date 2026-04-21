@@ -2,7 +2,9 @@
 (function() {
   var CONSENT_KEY = 'ypt_cookie_consent';
   var GA_ID = 'G-PP61NP5NN7';
-  var stored = localStorage.getItem(CONSENT_KEY);
+  var stored = null;
+
+  try { stored = localStorage.getItem(CONSENT_KEY); } catch(e) {}
 
   function grantConsent() {
     gtag('consent', 'update', { 'analytics_storage': 'granted' });
@@ -17,31 +19,44 @@
   }
 
   function dismissBanner() {
-    var banner = document.getElementById('cookie-consent');
-    if (banner) {
-      banner.style.display = 'none';
-      banner.remove();
-    }
+    var el = document.getElementById('cookie-consent');
+    if (el) { el.style.display = 'none'; el.remove(); }
   }
 
   if (stored === 'granted') { grantConsent(); return; }
   if (stored === 'denied') { return; }
 
-  // No stored preference — show the banner
-  var banner = document.getElementById('cookie-consent');
-  if (!banner) return;
+  // No stored preference — show the banner when DOM is ready
+  function showBanner() {
+    var banner = document.getElementById('cookie-consent');
+    if (!banner) return;
 
-  // Show it
-  banner.style.display = 'flex';
+    banner.style.display = 'flex';
 
-  banner.querySelector('#consent-accept').addEventListener('click', function() {
-    localStorage.setItem(CONSENT_KEY, 'granted');
-    grantConsent();
-    dismissBanner();
-  });
+    var acceptBtn = document.getElementById('consent-accept');
+    var rejectBtn = document.getElementById('consent-reject');
 
-  banner.querySelector('#consent-reject').addEventListener('click', function() {
-    localStorage.setItem(CONSENT_KEY, 'denied');
-    dismissBanner();
-  });
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        try { localStorage.setItem(CONSENT_KEY, 'granted'); } catch(e) {}
+        grantConsent();
+        dismissBanner();
+      });
+    }
+
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', function() {
+        try { localStorage.setItem(CONSENT_KEY, 'denied'); } catch(e) {}
+        dismissBanner();
+      });
+    }
+  }
+
+  // The banner HTML is right before this script, so it should exist.
+  // But use DOMContentLoaded as fallback just in case.
+  if (document.readyState !== 'loading') {
+    showBanner();
+  } else {
+    document.addEventListener('DOMContentLoaded', showBanner);
+  }
 })();
