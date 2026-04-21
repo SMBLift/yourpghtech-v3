@@ -17,6 +17,13 @@ figure{margin:0}
 [hidden]{display:none}
 details,figure,footer,header,main,menu,nav,section{display:block}
 
+/* WPBakery column grid (needed for slider full-width) */
+.col-lg-12{position:relative;min-height:1px;padding-right:15px;padding-left:15px}
+@media (min-width:1200px){.col-lg-12{float:left}.col-lg-12{width:100%}}
+.vc_column_container>.vc_column-inner{margin-right:0!important;margin-left:0!important;padding:0!important}
+.vc_row .wpb_column.vc_column_container:first-child{position:initial}
+body .vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner,body .vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner,body .vc_row-has-fill>.vc_column_container>.vc_column-inner{padding-top:0px}
+
 /* Container + grid */
 .container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;position:relative;padding:0}
 @media (min-width:960px){.container{width:750px}}
