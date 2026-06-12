@@ -332,11 +332,11 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', updateActiveTab);
   updateActiveTab();
 
-  // ── Form timestamp (spam prevention) ──
-  var timestampField = document.getElementById('form-timestamp');
-  if (timestampField) {
-    timestampField.value = Date.now();
-  }
+  // ── Form timestamp (spam prevention) ── set on every form that has one
+  var nowTs = Date.now();
+  document.querySelectorAll('input[name="_timestamp"]').forEach(function (f) {
+    f.value = nowTs;
+  });
 
   // ── Contact form submission ──
   var contactForm = document.getElementById('contact-form');

@@ -1,141 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found - Your Pgh Tech</title>
-  <meta name="description" content="The page you are looking for could not be found.">
+  <meta name="robots" content="noindex, follow">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/cropped-yptfav-32x32.jpg" sizes="32x32">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="icon" href="/images/cropped-yptfav-32x32.jpg" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <meta name="theme-color" content="#4C8FCC">
-
-  <!-- Google Consent Mode v2 (default: denied until user consents) -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      'analytics_storage': 'denied',
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'wait_for_update': 500
-    });
-  </script>
 
   <!-- Preconnect to external origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
   <!-- Critical CSS (single combined file) -->
-  <link rel="stylesheet" href="css/critical.css?v=20260422b">
+  <link rel="stylesheet" href="/css/critical.css?v=20260422b">
 
   <!-- Deferred CSS (non-critical — loaded async, applied on load) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Roboto:400&display=swap" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/vendor-bundle.css" media="print" onload="this.media='all'">
-  <!-- Fallback for no-JS -->
+  <link rel="stylesheet" href="/css/vendor-bundle.css" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Roboto:400&display=swap">
-    <link rel="stylesheet" href="css/vendor-bundle.css">
+    <link rel="stylesheet" href="/css/vendor-bundle.css">
   </noscript>
 </head>
-<body>
+<body class="wp-singular page-template-default page wp-theme-leadengine wpb-js-composer js-comp-ver-6.4.1 vc_responsive">
 
-  <a href="#main" class="skip-to-content">Skip to main content</a>
+<!-- Skip to content (accessibility) -->
+<a href="#main" class="skip-to-content">Skip to main content</a>
 
-  <!-- ═══ NAV ═══ -->
-  <nav class="site-nav inner-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a href="index.html" class="logo" aria-label="Your Pgh Tech - Home">
-        <img src="images/logo-white.webp" alt="Your Pgh Tech" class="logo-white" width="280" height="78">
-        <img src="images/logo-black.webp" alt="Your Pgh Tech" class="logo-black" width="280" height="78">
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="our-process.html">Our Process</a></li>
-        <li><a href="about.html">About Your Pgh Tech</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true">
-    <div class="mobile-menu-header">
-      <span style="font-weight:700;" aria-hidden="true">Menu</span>
-      <button class="mobile-menu-close" id="close-menu" aria-label="Close menu">&times;</button>
-    </div>
-    <ul class="mobile-menu-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="our-process.html">Our Process</a></li>
-      <li><a href="about.html">About Your Pgh Tech</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-    </ul>
-  </div>
-
-  <!-- ═══ MAIN ═══ -->
-  <main id="main">
-
-    <!-- PAGE HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <h1>Page Not Found</h1>
-      </div>
-    </section>
-
-    <!-- 404 CONTENT -->
-    <section class="error-page">
-      <div class="container">
-        <div class="error-number">404</div>
-        <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-        <div class="error-links">
-          <a href="index.html" class="btn-primary-outline">Return to Homepage</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="site-footer" role="contentinfo">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top full-width no-topbar nav-transparent-secondary-logo" aria-label="Main navigation">
+  <div class="menubar">
     <div class="container">
-      <div class="footer-inner">
-        <span class="copyright">Copyright &copy; <span id="current-year"></span> Your Pgh Tech LLC</span>
-        <ul class="footer-links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="our-process.html">Our Process</a></li>
-          <li><a href="about.html">About Your Pgh Tech</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="terms-and-conditions.html">Terms and conditions</a></li>
-          <li><a href="privacy-policy.html">Privacy policy</a></li>
+      <div id="logo">
+        <a class="logo" href="/index.html">
+          <img class="fixed-logo" src="/images/logo-black.webp" width="280" height="78" alt="Your Pgh Tech">
+          <img class="nav-logo" src="/images/logo-white.webp" width="280" height="78" alt="Your Pgh Tech">
+        </a>
+      </div>
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="main-menu" class="collapse navbar-collapse navbar-right">
+        <ul id="menu-main-menu" class="nav navbar-nav">
+          <li class="menu-item"><a title="Home" href="/index.html">Home</a></li>
+          <li class="menu-item"><a title="Services" href="/services.html">Services</a></li>
+          <li class="menu-item"><a title="Our Process" href="/our-process.html">Our Process</a></li>
+          <li class="menu-item"><a title="About Your Pgh Tech" href="/about.html">About Your Pgh Tech</a></li>
+          <li class="menu-item"><a title="Contact Us" href="/contact.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
-  </footer>
+  </div>
+</nav>
 
-  <button class="back-to-top" aria-label="Back to top">&#9650;</button>
+<!-- Wrapper -->
+<div id="wrapper" style="margin-bottom: 76px;">
 
-  <script src="js/main.js" defer></script>
-  <!-- Cookie Consent Banner -->
-  <div id="cookie-consent" role="dialog" aria-label="Cookie consent" aria-describedby="consent-message" style="position:fixed;bottom:0;left:0;right:0;z-index:99999;display:none;">
-    <p id="consent-message">We use cookies to analyze site traffic. You can choose to accept or decline. <a href="privacy-policy.html">Privacy Policy</a></p>
-    <div class="consent-buttons">
-      <button id="consent-reject" class="consent-btn consent-btn-reject" type="button">Decline</button>
-      <button id="consent-accept" class="consent-btn consent-btn-accept" type="button">Accept</button>
+  <!-- Page Header -->
+  <header class="entry-header single-page-header">
+    <div class="row single-page-heading blog-title-center">
+      <div class="container">
+        <h1 class="section-heading">Page Not Found</h1>
+      </div>
+    </div>
+  </header>
+
+  <div id="primary" class="content-area" style="padding-bottom:0px;">
+    <main id="main" class="site-main" role="main">
+      <section id="single-page" class="section">
+        <div class="container">
+          <div class="row">
+            <div class="single-page-content" style="text-align:center; padding:40px 15px 80px; max-width:680px; margin:0 auto;">
+              <p style="font-size:18px; line-height:28px;">Sorry, we couldn't find the page you were looking for. It may have moved or no longer exists.</p>
+              <p style="font-size:18px; line-height:28px;">Try one of these instead, or give us a call at <a href="tel:412-212-8337">412-212-8337</a>.</p>
+              <div class="sc-primary-btn" style="margin:30px 0;">
+                <a href="/index.html" class="tt_button tt_secondary_button btn_primary_color button-action-link">Back to Home</a>
+              </div>
+              <ul style="list-style:none; padding:0; margin:0; line-height:32px;">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/our-process.html">Our Process</a></li>
+                <li><a href="/about.html">About Your Pgh Tech</a></li>
+                <li><a href="/contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer id="footer" class="fixed">
+  <div class="lower-footer">
+    <div class="container">
+      <div class="pull-left">
+        <span>Copyright &copy; 2026 Your Pgh Tech LLC</span>
+      </div>
+      <div class="pull-right">
+        <ul id="menu-footer-menu" class="navbar-footer">
+          <li class="menu-item"><a href="/services.html">Services</a></li>
+          <li class="menu-item"><a href="/our-process.html">Our Process</a></li>
+          <li class="menu-item"><a href="/about.html">About Your Pgh Tech</a></li>
+          <li class="menu-item"><a href="/contact.html">Contact Us</a></li>
+          <li class="menu-item"><a href="/terms-and-conditions.html">Terms and conditions</a></li>
+          <li class="menu-item"><a href="/privacy-policy.html">Privacy policy</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-  <script src="js/consent.js"></script>
+</footer>
+
+<!-- JavaScript -->
+<script src="/js/main.js" defer></script>
 </body>
 </html>
